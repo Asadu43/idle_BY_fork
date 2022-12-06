@@ -39,7 +39,7 @@ describe.only("Idle Token", function () {
     token = await ethers.getContractAt("IERC20", DAI);
   });
 
-  it("Should Revert:", async () => {
+  it("Should Revert: Beacause Not Approve", async () => {
     await expect(idle.connect(user).mintIdleToken(parseEther("100"), true, user.address)).to.be.revertedWith("SafeERC20: low-level call failed");
   });
 
